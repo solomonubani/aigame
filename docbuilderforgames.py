@@ -18,7 +18,7 @@ import csv
     
 # field names  
 fields = ['name', 'timestamp', 'transcript', 'source'] 
-fields = ['periods', 'emotions', 'Sentence', 'annotation (instruction or not)', 'annotation (instruction type)', 'speaker']
+fields = ['starttime',  'utterance', 'instruction?', 'instruction type', 'speaker']
 
 
 #print(f.name)
@@ -34,7 +34,7 @@ with open(filename, 'a') as csvfile:
     csvwriter = csv.writer(csvfile)  
         
     # writing the fields  
-    csvwriter.writerow(fields)  
+    #csvwriter.writerow(fields)  
         
     transcript = ""
     
@@ -70,7 +70,7 @@ with open(filename, 'a') as csvfile:
                                #print(i)
                             
                                #periods, emotions, Sentence, annotation (instruction or not), annotation (instruction type), speaker
-                               output = [[time, " ", i, " ", " ", name]]
+                               output = [[time,  i, " ", " ", name]]
                                csvwriter.writerows(output) 
                             
                             
